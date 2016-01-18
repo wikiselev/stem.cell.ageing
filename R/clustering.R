@@ -3,7 +3,13 @@ pca_view <- function(d) {
     plot(res$rotation[,1], res$rotation[,2])
 }
 
-rep1_analysis <- function() {
+all_analysis <- function() {
+    sc3(all.data, 7:9, interactivity = F)
+    all.data.cpm <- cpm_norm(all.data)
+    sc3(all.data.cpm, 7:9, interactivity = F)
+}
+
+rep_analysis <- function() {
     # rep1 is 978
     rep1 <- all.data[,grepl("SLX\\.978", colnames(all.data))]
     sc3(rep1, 2:10, interactivity = F)
