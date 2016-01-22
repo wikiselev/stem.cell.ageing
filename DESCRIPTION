@@ -9,4 +9,9 @@ License: What license is it under?
 LazyData: TRUE
 Depends:
     SC3,
-    edgeR
+    edgeR,
+    matrixStats,
+    statmod,
+    DESeq2,
+    pheatmap,
+    clustools

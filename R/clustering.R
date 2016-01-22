@@ -12,7 +12,10 @@ all_analysis <- function() {
 rep_analysis <- function() {
     # rep1 is 978
     rep1 <- all.data[,grepl("SLX\\.978", colnames(all.data))]
-    sc3(rep1, 2:10, interactivity = F)
+    spikeins <- rownames(all.data[(dim(all.data) - 71):dim(all.data), ])
+    genes <- Brennecke_getVariableGenes(rep2, spikes = spikeins)
+
+    sc3(rep1[rownames(rep1) %in% genes, ], 2:10, interactivity = F)
     rep1.cpm <- cpm_norm(rep1)
     sc3(rep1.cpm, 2:10, interactivity = F)
 
